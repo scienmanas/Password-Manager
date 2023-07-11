@@ -5,4 +5,6 @@ It stores password in .json format, also it can suggest some good passwords that
 
 If the codes gives error try to change the path of the files I imported, I used raw string for paths only, So change the relative path accordingly 
 
+This can be used to save passwords with username/email of varius websites, also it generates a random assword everytime if needed by the user, once the generate password button is pressed, it automatically copies the generated password on the clipboard.
+
 Enjoy🙂
