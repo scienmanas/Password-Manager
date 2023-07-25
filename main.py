@@ -9,7 +9,7 @@ import json
 password = PasswordGenerator()
 
 def SearchTheList():
-    with open(r"Python_Course\Day 29\Password Manager with Tkinter\Passwords.json",mode='r') as file:
+    with open(r"Password-Manager\Passwords.json",mode='r') as file:
         data = json.load(file)
         found = False
         for site in data:
@@ -23,10 +23,10 @@ def SearchTheList():
                 messagebox.showerror(title="Oops..",message="Data Not Found")
 
 def WriteData(data):
-    with open(r"Python_Course\Day 29\Password Manager with Tkinter\Passwords.json",mode='r') as file:
+    with open(r"Password-Manager\Passwords.json",mode='r') as file:
         new_data = json.load(file)
         new_data.update(data)
-    with open(r"Python_Course\Day 29\Password Manager with Tkinter\Passwords.json",mode='w') as file:
+    with open(r"Password-Manager\Passwords.json",mode='w') as file:
         json.dump(new_data,file,indent=4)
 
 def AddButtonPressed():
@@ -41,7 +41,7 @@ def AddButtonPressed():
     if len(str(WebsiteEntry.get())) == 0 or len(str(EmailEntry.get())) == 0 or len(str(PasswordEntry.get())) == 0:
         messagebox.showinfo(title="Oops!",message="Please make sure you don't leave any field empty")
     else:
-        is_ok = messagebox.askokcancel(title="Are you sure?", message=f"Website: {str(WebsiteEntry.get())}'\n'Email/Username: {str(EmailEntry.get())}'\n'Password: {str(PasswordEntry.get())}")
+        is_ok = messagebox.askokcancel(title="Are you sure?", message=f"Website: {str(WebsiteEntry.get())}\nEmail/Username: {str(EmailEntry.get())}\nPassword: {str(PasswordEntry.get())}")
         if is_ok:
             WriteData(data)
             pyperclip.copy(str(PasswordEntry.get()))
@@ -59,7 +59,7 @@ window.config(padx=10,pady=20)
 
 logo = Canvas(width=400,height=400)
 logo.grid(row = 1, column=2)
-logo_image = PhotoImage(file=r"Python_Course\Day 29\Password Manager with Tkinter\logo.png")
+logo_image = PhotoImage(file=r"Password-Manager\logo.png")
 logo.create_image(200,200, image = logo_image)
 
 # Labels
